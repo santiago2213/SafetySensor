@@ -1,0 +1,53 @@
+﻿@model AddRecordedDataViewModel;
+@{
+    ViewData["Title"] = "AddRecordedData";
+}
+
+<h1>AddRecordedData</h1>
+<form asp-controller="RecordedData" asp-action="AddRecordedData" method="post">
+
+    <div class="=form-group">
+    <label>Data Type</label>
+    <select asp-for="RecordedDataType"
+    asp-items="ViewBag.AllDataTypes"
+    class="form-control"
+    id="RecordedDataType">
+        
+    </select>
+        
+</div>
+
+
+
+    <div class="form-group">
+        <label> Data Date </label>
+        <input asp-for="RecordedDate"
+               class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label> Sensor Location </label>
+        <select asp-for="SensorLocationID" asp-items="ViewBag.AllSensorLocations" class="form-control" id="SensorLocationID">
+          
+        </select>
+
+    </div>
+   
+    <div class="form-group">
+        <label> Time </label>
+        <input asp-for="Time"
+               class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label> Data Value </label>
+        <input asp-for="RecordedDataValue"
+               class="form-control" />
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Add Recorded Data</button>
+
+
+</form>
+

@@ -1,0 +1,25 @@
+﻿@model AddSensorLocationViewModel
+@{
+    ViewData["Title"] = "AddSensorLocation";
+}
+
+<h1>AddSensorLocation</h1>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-controller="RecordedData" asp-action="AddSensorLocation" method="post">
+
+    <div class="form-group">
+        <label>Choose Facility</label>
+        <select asp-for="FacilityID" asp-items="ViewBag.AllFacilities" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label>Enter Location Name</label>
+        <input asp-for="LocationName" class="form-control"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Sensor Location</button>
+
+
+
+</form>

@@ -1,0 +1,61 @@
+﻿
+@model SearchSensorRepairRequestsViewModel
+@{
+    ViewData["Title"] = "Search Sensor Repair Request";
+}
+<h1>Search Sensor Repair Request</h1>
+
+<form asp-controller="SensorRepairRequest" asp-action="SearchSensorRepairRequest" method="post">
+    <div class="form-group">
+        <label for="searchDate">Date of repair request:</label>
+        <input type="date" class="form-control" id="searchDate" name="searchDate" />
+    </div>
+    <div class="form-group">
+        <label>
+            Select Engineer
+        </label>
+        <select asp-for="SearchEngineerFullName" asp-items="ViewBag.allEngineers" class="form-control" id="Id"> <option value="">None Selected </option> </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+@if(Model.SensorRepairRequests != null)
+{
+
+
+
+    @if (Model.SensorRepairRequests.Any())
+    {
+        <h2>Results:</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sensor Location</th>
+                    <th>Date Requested</th>
+                    <th>Date Repaired</th>
+                    <th>Engineer</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var repairRequest in Model.SensorRepairRequests)
+                {
+                    <tr>
+                        <td>@repairRequest.SensorLocation.LocationName</td>
+                        <td>@repairRequest.DateSensorRepairRequested.ToShortDateString()</td>
+                        <td>@if (repairRequest.DateSensorRepaired != null)
+                            {
+                                @repairRequest.DateSensorRepaired?.ToShortDateString()
+                            }
+                            else
+                            {
+                                @("Sensor Not Yet Repaired")
+                            }
+
+                        </td>
+                        <td>@repairRequest.Engineer.Fullname</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else{@("No Sensor Repair Request meets your search criteria")}
+}

@@ -1,0 +1,89 @@
+﻿@using LibraryGroup7
+@using MvcGroup7.ViewModels;
+@model SearchRecordedDataViewModel
+@{
+    ViewData["Title"] = "Search Recorded Data";
+}
+
+<h1>Search Recorded Data</h1>
+
+<form asp-controller="RecordedData" asp-action="SearchRecordedData" method="post">
+
+    <div class="=form-group">
+    <label>Single Date</label>
+    <input asp-for="SearchRecordedDataDate" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Date Range</label>
+        <div class="row">
+            <div class="col">
+                <input type="date" asp-for="SearchRecordedDataStartDate" class="form-control" />
+            </div>
+            <div class="col">
+                <input type="date" asp-for="SearchRecordedDataEndDate" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+<div class="form-group">
+    <label>Facility</label>
+    <select asp-for="FacilityID" 
+    asp-items="ViewBag.AllFacilities" 
+    class="form-control"
+    id="FacilityID">
+        <option value="">None Selected</option>
+    </select>
+</div>
+
+<div class="=form-group">
+    <label>Data Type</label>
+    <select asp-for="SearchDataType"
+    asp-items="ViewBag.AllDataTypes"
+    class="form-control"
+    id="RecordedDataType">
+        <option value="">None Selected</option>
+    </select>
+        
+</div>
+
+<div class="=form-group">
+    <label>Data Value</label>
+        <input name="SearchDataValue" class="form-control" />
+</div>
+
+
+
+<button type="submit" class="btn btn-primary">Search Recorded Data</button>
+
+
+
+</form>
+
+
+@if (Model.SearchResult != null)
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+        <th>Date</th>
+        <th>Data Type</th>
+        <th>Data Value</th>
+        <th>Time</th>
+        <th>Sensor Location</th>
+        <th>Facility</th>
+        </thead>
+        <tbody>
+            @foreach (RecordedData eachRecord in Model.SearchResult)
+            {
+                <tr>
+                    <td>@eachRecord.RecordedDataDate.ToShortDateString()</td>
+                    <td>@eachRecord.RecordedDataType</td>
+                    <td>@eachRecord.RecordedDataValue</td>
+                    <td>@eachRecord.Time</td>
+                    <td>@eachRecord.SensorLocation.LocationName</td>
+                    <td>@eachRecord.SensorLocation.Facility.FacilityName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
