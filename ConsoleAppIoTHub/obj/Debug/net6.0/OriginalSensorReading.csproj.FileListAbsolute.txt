@@ -1,0 +1,5 @@
+C:\Users\nates\source\repos\Fall2022ProjectGroup7\Fall2022SolutionGroup7\ConsoleAppIoTHub\obj\Debug\net6.0\OriginalSensorReading.csproj.AssemblyReference.cache
+C:\Users\nates\source\repos\Fall2022ProjectGroup7\Fall2022SolutionGroup7\ConsoleAppIoTHub\obj\Debug\net6.0\OriginalSensorReading.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nates\source\repos\Fall2022ProjectGroup7\Fall2022SolutionGroup7\ConsoleAppIoTHub\obj\Debug\net6.0\OriginalSensorReading.AssemblyInfoInputs.cache
+C:\Users\nates\source\repos\Fall2022ProjectGroup7\Fall2022SolutionGroup7\ConsoleAppIoTHub\obj\Debug\net6.0\OriginalSensorReading.AssemblyInfo.cs
+C:\Users\nates\source\repos\Fall2022ProjectGroup7\Fall2022SolutionGroup7\ConsoleAppIoTHub\obj\Debug\net6.0\OriginalSensorReading.csproj.CoreCompileInputs.cache

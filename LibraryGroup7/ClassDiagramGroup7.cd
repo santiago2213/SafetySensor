@@ -1,11 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="LibraryGroup7.TestClass">
-    <Position X="1.5" Y="1.25" Width="1.5" />
+  <Class Name="LibraryGroup7.RecordedData">
+    <Position X="10.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>TestClass.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAIACAAAAAAAAAAAAAAAAgAUAQA=</HashCode>
+      <FileName>RecordedData.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SensorLocation" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibraryGroup7.AppUser">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAEAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AppUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibraryGroup7.Engineer">
+    <Position X="1.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engineer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SensorRepairRequestCreated" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LibraryGroup7.Supervisor">
+    <Position X="6.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Supervisor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SensorRepairRequestApproved" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LibraryGroup7.IT">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IT.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SensorWorkedOn" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LibraryGroup7.SensorRepairRequest">
+    <Position X="4" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAgAgCAAAIQCAAAAAgAAAEAAQAAAAgAAII=</HashCode>
+      <FileName>SensorRepairRequest.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SensorLocation" />
+      <Property Name="IT" />
+      <Property Name="Supervisor" />
+      <Property Name="Engineer" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SensorRepairRequestNotes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LibraryGroup7.SensorLocation">
+    <Position X="7.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAICDAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>SensorLocation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Facility" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SensorRepairRequests" />
+      <Property Name="RecordedData" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LibraryGroup7.Notes">
+    <Position X="1" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAgAhAAAAAAAAAAACAAAAAAAQBAAAgAAIA=</HashCode>
+      <FileName>Notes.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SensorRepairRequest" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LibraryGroup7.Facility">
+    <Position X="8" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAICAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Facility.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SensorLocation" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
